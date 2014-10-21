@@ -1,13 +1,13 @@
-void pulseOneLed(int pixelNumber, uint32_t color, int duration) { //
-  for(int i = 0; i < pulseBrightness; i+=10) { //
+void pulseOneLed(int pixelNumber, uint32_t color, int duration) { // Making pixelNumber a variable and adds color uint32_t and also makes duration a variable
+  for(int i = 0; i < pulseBrightness; i+=10) { // runs this makes (i) a variable = to 0 but every run add 10 to the brightness
  
  
-    strip.setBrightness(i); // 
-    turnPixelOn(pixelNumber, color); //
+    strip.setBrightness(i); // this is the brightness of the led = 0
+    turnPixelOn(pixelNumber, color); // turns on the led and uses variable pixelNumber which makes it color uint32_t
     delay(duration/2); // has a delay of 2 seconds
   }
   
-   for(int i = pulseBrightness; i > 0; i-=10) { // 
+   for(int i = pulseBrightness; i > 0; i-=10) { // makes the led pulse but instead of i going up 10 every pass it goes down 10 dimming the light
    
    
     strip.setBrightness(i); 
@@ -16,15 +16,15 @@ void pulseOneLed(int pixelNumber, uint32_t color, int duration) { //
   }
 }
 
-int setIncrementSize(int firstNeoPixel, int lastNeoPixel, int delayDuration) {
-  int var = lastNeoPixel - firstNeoPixel;
-  switch (var) {
-    case 1:
+int setIncrementSize(int firstNeoPixel, int lastNeoPixel, int delayDuration) { // adds multiple variables
+  int var = lastNeoPixel - firstNeoPixel; // making variable (var) equal something
+  switch (var) { 
+    case 1: // do var funstion when equal to 1
       
       
-      return 10;
+      return 10; // terminates the program and returns to 10
       break;
-    case 2:
+    case 2: // do var function when equal to 2
       
       
       return 10;
