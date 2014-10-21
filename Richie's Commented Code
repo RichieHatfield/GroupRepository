@@ -1,1 +1,30 @@
-{
+void pulseOneLed(int pixelNumber, uint32_t color, int duration) { //
+  for(int i = 0; i < pulseBrightness; i+=10) { //
+ 
+ 
+    strip.setBrightness(i); // 
+    turnPixelOn(pixelNumber, color); //
+    delay(duration/2); // has a delay of 2 seconds
+  }
+  
+   for(int i = pulseBrightness; i > 0; i-=10) { // 
+   
+   
+    strip.setBrightness(i); 
+    turnPixelOn(pixelNumber, color); 
+    delay(duration/2);
+  }
+}
+
+int setIncrementSize(int firstNeoPixel, int lastNeoPixel, int delayDuration) {
+  int var = lastNeoPixel - firstNeoPixel;
+  switch (var) {
+    case 1:
+      
+      
+      return 10;
+      break;
+    case 2:
+      
+      
+      return 10;
