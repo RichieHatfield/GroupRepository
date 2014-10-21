@@ -1,0 +1,42 @@
+for(int i = 0; i < pulseBrightness; i+=increment) { // variable i is pulse brightness and  itis less than zero
+    strip.setBrightness(i);// pushes data to set brightness
+    int pixel = firstPixel; //adding variable pixel and equals first pixel
+   
+   
+    while(pixel < lastPixel) { // if "pixel is greater than "last pixel than run the function below
+      turnPixelOn(pixel, color); //turns on pixel and sets color
+      pixel++; // adds one to the pixel with "++"
+      }
+    delay(adjustedTime); // delay between pixel change
+  }
+  
+  for(int i = pulseBrightness; i > 0; i-=increment) { //variable i is pulse bightness and its greater than zero
+    strip.setBrightness(i);// pushes data to se brightness
+    int pixel = firstPixel;// int pixel is adding a variable
+    while(pixel < lastPixel) {
+      turnPixelOn(pixel, color);//turns light on with the intented light number and color
+      pixel++;//whatever the pixel count is, the plus' add +1
+      }
+    delay(adjustedTime);// 
+  }
+  
+}
+
+
+
+
+void turnPixelOn(int pixelNumber, uint32_t pixelColor) {//looping effect to turn the given pixel light on with the given color
+  strip.setPixelColor(pixelNumber, pixelColor);//pushes data to set the color of light to the given pixel
+  strip.show();//strip.show pushes data out to the pixel
+}
+
+
+
+void turnPixelOff(int pixelNumber) {//looping effect to turn the given pixel light off
+   strip.setPixelColor(pixelNumber, 0, 0, 0);
+  strip.show();//strip.show pushes data out to the pixel
+}
+
+
+
+
