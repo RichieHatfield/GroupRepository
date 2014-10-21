@@ -1,0 +1,31 @@
+   break; //exit from a do or switch statment
+    case 5: //telling that switch to do something
+   
+   
+      return delayDuration/2; // break the system or restart
+      break;// exit from a do or switch statment
+    default: 
+  
+  
+      return delayDuration/40; //break from system or restart
+  }
+}
+
+
+
+void pulseRangeOfLeds(int firstPixel, int lastPixel, uint32_t color, int duration) { //changes the rythme of leds
+  
+  
+  int increment = setIncrementSize(firstPixel, lastPixel, duration); // adds variable for size of pixel and brightness
+  
+  
+  int adjustedTime = setDelayDuration(increment, duration); // adds variable for delay time
+  
+  
+  
+  for(int i = 0; i < pulseBrightness; i+=increment) { //how long thr britness should go on for
+    strip.setBrightness(i); // Brightness of led
+    int pixel = firstPixel; // adds variable
+   
+   
+    while(pixel < lastPixel) { //while one pixel is doing something the last pixel will be doing the same
