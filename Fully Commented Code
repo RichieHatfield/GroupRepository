@@ -1,0 +1,40 @@
+#include <Adafruit_NeoPixel.h> //imports the neo pixel library
+
+#define PIN 6   // sets the arduino pin as pin 6
+
+
+/*
+creating an object called strip of class Adafruit_NeoPixel
+*/
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(12, PIN, NEO_GRB + NEO_KHZ800);
+
+
+int pulseDuration = 50;   //sets the pulse duration to 50 milliseconds
+
+
+int pulseBrightness = 255; //sets the pulse brightness to max (range of 0-255)
+
+
+// colors I picked from adobe kuler: http://goo.gl/I5x9aP
+uint32_t darkBlue = strip.Color(9, 75, 108);  //sets variable dark blue as a select rgb value
+uint32_t lightBlue = strip.Color(65, 195, 255);   //sets variable lightBlue as a selecte rgb value
+uint32_t greyBlue = strip.Color(16, 129, 193);
+uint32_t blueGrey = strip.Color(75, 99, 107);
+
+
+void setup() { //setup code is code that will run once
+  strip.begin();  //runs the begin function from the adafruit class
+  strip.show();    //runs the show function from the adafruit class
+  }
+
+void loop() {   //all code in the void loop function run indefinitely until told to stop
+
+/* inside the () it creates the variable j with a value of 0 and allows the program to run
+as long as the value of j is less than or equal to 12. Also every time the program runs
+it adds 1 to the value of j
+*/
+
+for (int j = 0; j <= 12; j++) {
+   pulseRangeOfLeds(0, j, lightBlue, pulseDuration); //flashes the number of leds in this case the value of j, sets the flashed color as blue and then sets the time the leds flash
+  }
+}
