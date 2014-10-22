@@ -1,0 +1,26 @@
+//These are lines 65-96
+return 10;
+break;
+// Break allows to seperate/split the code at this point
+case 3:
+return 5;
+// Terminates function and returns to line 5
+break;
+// Breaks
+case 4:
+// Case is like IF, it controlls the flow of the code, but case is compared to the statment it's placed in
+//Thus when the Code BREAK is in place, then case will start the next part of the code.
+// After CASE is used, then RETURN will be used to return the code to the origional function and gets ready to BREAK
+return 5;
+break;
+case 5:
+return 5;
+break;
+default:
+return 1;
+}
+}
+//-------As of now the codes BREAK, CASE, RETURN that have been used are the codes that will make this thing count
+int setDelayDuration(int incrementSize, int delayDuration) {
+int var = incrementSize; // This code will be set as the initiation of the delay for the variable selected.
+switch (var) {
